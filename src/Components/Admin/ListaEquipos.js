@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 
-import imagen1 from '../../img/paneles-solares-sol.jpg'
-import imagen2 from '../../img/Paneles-solares.jpg'
+import imagen1 from '../../img/panelesSolaresSol.jpg'
+import imagen2 from '../../img/PanelesSolares.jpg'
 import imagen3 from '../../img/mantenimiento.jpg'
 import { Paginacion } from '../../Paginacion'
 
