@@ -1,0 +1,323 @@
+.div-container {
+    padding: 1rem 1rem;
+    margin-top: 2rem;
+}
+
+.div-style-form {
+    margin-top: 1rem;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.h3-titulos {
+    margin-bottom: 10px;
+}
+
+.p-label-form {
+    font-size: 18px;
+    color: #5C5C5C;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 15PX;
+}
+
+.div-resumen-children {
+    height: 100%;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 15px 0px 0px 0px;
+}
+
+.div-resumen-children-machine {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.div-resumen-children-tecnicos {
+    display: flex;
+    align-items: center;
+}
+
+.icon-machine {
+    font-size: 60px;
+    color: #5C8BCC;
+}
+
+.link-e-machine {
+    text-align: center;
+    background-color: #5C5C5C;
+    border-radius: 0 0 20px 20px;
+}
+
+.a-link-redirect {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.a-link-redirect:hover {
+    color: orange;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.p-element-machine-1 {
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: #5C5C5C;
+    margin-bottom: 0rem;
+}
+
+.p-element-machine-2 {
+    color: #5C5C5C;
+    font-weight: bold;
+}
+
+.bottom-custom {
+    width: 10rem;
+    background-color: orange;
+    color: white;
+    border: 1px solid orange;
+    border-radius: 20px;
+    padding: 5px 0px;
+    margin: 0rem 1rem;
+}
+
+.bottom-custom:hover {
+    width: 10rem;
+    background-color: #E3E3E3;
+    color: #5C5C5C;
+    border: 1px solid #E3E3E3;
+    margin: 0rem 1rem;
+}
+
+.bottom-custom-secundary {
+    width: 10rem;
+    background-color: #5C5C5C;
+    color: white;
+    border: 1px solid #5C5C5C;
+    border-radius: 20px;
+    padding: 5px 0px;
+    margin: 0px;
+}
+
+.bottom-custom-secundary:hover {
+    width: 10rem;
+    background-color: #E3E3E3;
+    color: #5C5C5C;
+    border: 1px solid #E3E3E3;
+    margin: 0px;
+}
+
+.div-buttom-registra {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.div-header-equipos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon-plus {
+    font-size: 30px;
+    color: orange;
+    cursor: pointer;
+}
+
+.icon-plus:hover {
+    font-size: 30px;
+    color: #E3E3E3;
+    cursor: pointer;
+}
+
+.div-image-card {
+    width: 100%;
+}
+
+.div-info-card {
+    padding: 10px 10px;
+}
+
+.div-info-card-element {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-card-machine {
+    height: 10rem;
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+}
+
+.div-card-list-machine {
+    background-color: #F6F8FA;
+    margin: 1rem 2rem;
+    border-radius: 10px 0px 20px 20px;
+}
+
+.link-ver-detalles-card {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    background-color: #5C5C5C;
+    border-radius: 0 0 20px 20px;
+    color: white;
+    padding: 3px;
+}
+
+.div-pagination {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+}
+
+.hr-usuario-tec {
+    height: 3px !important;
+    margin-top: 2rem;
+}
+
+.div-buttom-registra-usuario-tec {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.div-pagina-link {
+    display: flex;
+    justify-content: center;
+    width: 25px;
+}
+
+.div-pagina-link-selected {
+    display: flex;
+    justify-content: center;
+    background-color: orange;
+    width: 25px;
+    border-radius: 20px;
+}
+
+.pagina-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    color: #5C5C5C;
+    border-radius: 20px;
+}
+
+.pagina-link:hover {
+    display: flex;
+    justify-content: center;
+    width: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #E3E3E3;
+    ;
+    border-radius: 20px;
+}
+
+.pagina-link-selected {
+    display: flex;
+    justify-content: center;
+    width: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.pagina-link-selected:hover {
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+}
+
+.div-info-today {
+    text-align: center;
+}
+
+.div-table-info-today {
+    margin-top: 1rem;
+    padding: 0 2rem;
+}
+
+.table-info-today {
+    width: 100%;
+}
+
+.table-head-info-today {
+    text-align: justify;
+}
+
+.tables-overflow-list {
+    overflow: auto;
+}
+
+.div-calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea.form-control {
+    min-height: calc(1.5em + 0.75rem + 2px);
+    height: 8rem;
+}
+
+
+@media only screen and (min-device-width: 1400px) {}
+
+@media only screen and (min-device-width: 1200px) and (max-device-width: 1399px) {}
+
+@media only screen and (min-device-width: 992px) and (max-device-width: 1199px) {}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 991px) {
+
+    .div-card-list-machine {
+        margin: 10px 5px;
+    }
+
+}
+
+@media only screen and (min-device-width: 576px) and (max-device-width: 767px) {}
+
+@media only screen and (max-device-width: 575px) {
+
+    .div-container {
+        padding: 1rem 5px;
+        margin-top: 2rem;
+    }
+
+    .div-table-info-today {
+        margin-top: 1rem;
+        padding: 0 10px;
+    }
+
+    .div-card-list-machine {
+        margin: 10px 5px;
+    }
+
+    .div-style-form {
+        margin-top: 1rem;
+        background-color: white;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+}
