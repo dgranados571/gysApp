@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 
 import imagen1 from '../../img/panelesSolaresSol.jpg'
-import imagen2 from '../../img/panelesSolares.jpg'
+import imagen2 from '../../img/computoMantenimiento.png'
 import imagen3 from '../../img/mantenimiento.jpg'
 import { Paginacion } from '../../Paginacion'
 
@@ -20,11 +20,11 @@ export const ListaEquipos = ({ setControlView }) => {
 
     const [elementsList, setElementsList] = useState([
         { id: '1', urlImage: imagen1, nombre: 'Maquina 1', ubicacion: 'Linea 1' },
-        { id: '2', urlImage: './static/media/panelesSolares.dd26015f1edf7cbc0147.jpg', nombre: 'Maquina 2', ubicacion: 'Linea 1' },
+        { id: '2', urlImage: imagen2, nombre: 'Maquina 2', ubicacion: 'Linea 1' },
         { id: '3', urlImage: imagen3, nombre: 'Maquina 3', ubicacion: 'Linea 2' },
         { id: '4', urlImage: imagen1, nombre: 'Maquina 4', ubicacion: 'Linea 2' },
         { id: '5', urlImage: imagen3, nombre: 'Maquina 5', ubicacion: 'Linea 3' },
-        { id: '6', urlImage: './static/media/panelesSolares.dd26015f1edf7cbc0147.jpg', nombre: 'Maquina 6', ubicacion: 'Linea 3' }
+        { id: '6', urlImage: imagen2, nombre: 'Maquina 6', ubicacion: 'Linea 3' }
     ])
 
     return (
