@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/static/css/main.6256bdd9.css",
-    "main.js": "/static/js/main.0ea7716c.js",
+    "main.js": "/static/js/main.cbf92e02.js",
     "static/media/panelesSolaresSol.jpg": "/static/media/panelesSolaresSol.2b21ca29cd56d0514d81.jpg",
-    "static/media/PanelesSolares.jpg": "/static/media/PanelesSolares.dd26015f1edf7cbc0147.jpg",
+    "static/media/panelesSolares.jpg": "/static/media/panelesSolares.dd26015f1edf7cbc0147.jpg",
     "index.html": "/index.html",
     "main.6256bdd9.css.map": "/static/css/main.6256bdd9.css.map",
-    "main.0ea7716c.js.map": "/static/js/main.0ea7716c.js.map"
+    "main.cbf92e02.js.map": "/static/js/main.cbf92e02.js.map"
   },
   "entrypoints": [
     "static/css/main.6256bdd9.css",
-    "static/js/main.0ea7716c.js"
+    "static/js/main.cbf92e02.js"
   ]
 }
