@@ -150,7 +150,7 @@ export const RegistraEquipo = ({ setControlView }) => {
 
     return (
         <div className='div-style-form'>
-            <h3 className='h3-titulos'>Registro de equipos (MENSAJE DE CONTROL DE CAMBIOS)</h3>
+            <h3 className='h3-titulos'>Registro de equipos</h3>
             <div className="row">
                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 " >
                     <div className='div-form'>
