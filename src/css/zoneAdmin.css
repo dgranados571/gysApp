@@ -120,7 +120,7 @@
 
 .div-buttom-registra {
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     margin-top: 2rem;
 }
@@ -194,6 +194,7 @@
     justify-content: end;
     align-items: flex-end;
     height: 100%;
+
 }
 
 .div-pagina-link {
@@ -273,6 +274,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
 }
 
 textarea.form-control {
@@ -280,6 +282,14 @@ textarea.form-control {
     height: 8rem;
 }
 
+.div-buttom-buscar-historial {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.form-control-error{
+    border: 1px solid red;
+}
 
 @media only screen and (min-device-width: 1400px) {}
 
@@ -295,7 +305,16 @@ textarea.form-control {
 
 }
 
-@media only screen and (min-device-width: 576px) and (max-device-width: 767px) {}
+@media only screen and (min-device-width: 576px) and (max-device-width: 767px) {
+
+    .div-buttom-registra-usuario-tec {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        margin: 10px 0px;
+    }
+
+}
 
 @media only screen and (max-device-width: 575px) {
 
@@ -316,8 +335,46 @@ textarea.form-control {
     .div-style-form {
         margin-top: 1rem;
         background-color: white;
-        padding: 10px;
+        padding: 20px 10px;
         border-radius: 20px;
+        height: 100%;
     }
 
+    .div-buttom-registra-usuario-tec {
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        margin: 8px 0px;
+    }
+
+}
+
+.div-gift-element{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.div-cargando-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: auto;
+    display: block;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    background-color: rgba(207, 226, 255, 0.7);
+}
+
+.div-size-gift{
+    height: 5rem;
+    width: 5rem;
+}
+
+.gif-element{
+    max-width: 100%;
 }

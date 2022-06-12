@@ -13,8 +13,7 @@ export const MenuHeader = ({ setStateMenu, setRedirect }) => {
 
     const menuMantenimientos = useMenuNavigation([
         { labelMenu: 'Agenda', name: 'item1', class: 'item-d-d' },
-        { labelMenu: 'Historial', name: 'item2', class: 'item-d-d' },
-        { labelMenu: 'Reportes', name: 'item3', class: 'item-d-d' }
+        { labelMenu: 'Historial', name: 'item2', class: 'item-d-d' }
     ])
 
     const {
@@ -172,7 +171,6 @@ export const MenuHeader = ({ setStateMenu, setRedirect }) => {
                         <button name='MENU3' id='Usuarios técnicos' className='btn btn-link a-buttom' onClick={selectMenuResponsive}> Usuarios técnicos</button>
                         <button name='item1' id='Agenda' className='btn btn-link a-buttom' onClick={selectMenuMantenimientoResponsive} > Agenda de mantenimiento</button>
                         <button name='item2' id='Historial' className='btn btn-link a-buttom' onClick={selectMenuMantenimientoResponsive} > Historial de mantenimientos</button>
-                        <button name='item3' id='Reportes' className='btn btn-link a-buttom' onClick={selectMenuMantenimientoResponsive} > Reportes de mantenimiento</button>
                         <div className='div-cerrar-sesion-responsive'>
                             <button className='btn btn-link a-link-cerrar-sesion-responsive' onClick={cierraSesion} >
                                 Cerrar sesión

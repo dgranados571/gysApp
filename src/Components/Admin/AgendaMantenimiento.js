@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import Calendar from 'react-calendar';
 import Select from 'react-select'
 import DatePicker from 'react-date-picker'
+import { TablaGestionTecnica } from './TablaGestionTecnica';
 
 
-export const AgendaManteniemiento = () => {
+export const AgendaMantenimiento = () => {
 
     const [date, setDate] = useState(new Date())
 
@@ -39,9 +40,17 @@ export const AgendaManteniemiento = () => {
                                         <textarea className='form-control' ></textarea>
                                     </div>
                                 </div>
+                                <div className="col-12 col-sm-12 col-md-12 col-lg-12 " >
+                                    <div className='div-buttom-registra'>
+                                        <button className='btn btn-primary bottom-custom'>Guardar</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
+                <div className='div-style-form'>
+                    <TablaGestionTecnica />
                 </div>
             </div>
         </>

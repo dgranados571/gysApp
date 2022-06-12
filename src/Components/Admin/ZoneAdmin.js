@@ -3,7 +3,8 @@ import { MenuHeader } from './MenuHeader'
 import { Resumen } from './Resumen';
 import { EquiposMaquinaria } from './EquiposMaquinaria';
 import { UsuariosTecnicos } from './UsuariosTecnicos';
-import { AgendaManteniemiento } from './AgendaManteniemiento';
+import { AgendaMantenimiento } from './AgendaMantenimiento';
+import { HistorialMantenimiento } from './HistorialMantenimiento';
 import '../../css/zoneAdmin.css'
 import '../../css/calendar.css'
 
@@ -32,19 +33,11 @@ export const ZoneAdmin = ({ setRedirect }) => {
                 switch (stateMenu.menuHijo) {
                     case 'item1':
                         return (
-                            <AgendaManteniemiento />
+                            <AgendaMantenimiento />
                         )
                     case 'item2':
                         return (
-                            <div className='div-container'>
-                                Item 2 Menu 3
-                            </div>
-                        )
-                    case 'item3':
-                        return (
-                            <div className='div-container'>
-                                Item 3 Menu 3
-                            </div>
+                            <HistorialMantenimiento/>
                         )
                     default:
                         return (
