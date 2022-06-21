@@ -30,6 +30,33 @@ export const ListaEquipos = ({ setControlView }) => {
 
     const getInformacionEquipos = async () => {
         setCargando(true);
+
+        fetch(`${urlEntorno}/service/gys/obtieneEquipos?paginaActual=${paginaActual}&elementosPorPagina=${elementosPorPagina}`, {
+            method: 'GET',
+            headers: new Headers(
+                {
+                    'Accept': 'application/json',
+                    'Content-type': 'application/json',
+                    "Access-Control-Allow-Origin": '*'
+                }),
+            mode: 'cors',
+        }).then(resp => {
+            return resp.json()
+        }).then(data => {
+            setTimeout(() => {
+                console.log(data);
+                setElementsList(data.equipoMaquinaDTOList)
+                setElementsPaginacion({ ...elementsPaginacion, totalElementos: data.totalElementos })
+                setCargando(false);
+            }, 500)
+        }).catch((error) => {
+            setTimeout(() => {
+                console.log(error);
+                setElementsPaginacion({ ...elementsPaginacion, totalElementos: 0 })
+                setCargando(false);
+            }, 500)
+        })
+    /*
         await axios.get(`${urlEntorno}/service/gys/obtieneEquipos?paginaActual=${paginaActual}&elementosPorPagina=${elementosPorPagina}`, {
             headers: new Headers(
                 {
@@ -51,6 +78,7 @@ export const ListaEquipos = ({ setControlView }) => {
                 setCargando(false);
             }, 500)
         })
+    */    
     }
 
     return (
