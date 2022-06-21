@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../css/login.css';
 
 export const Login = ({ setRedirect }) => {
@@ -38,6 +40,8 @@ export const Login = ({ setRedirect }) => {
                 usuario: 'Tecnico',
                 rol: 'TECNICO'
             });
+        }else{
+            toast('Error en la autenticación')
         }
     }
 
@@ -73,6 +77,7 @@ export const Login = ({ setRedirect }) => {
                     <p className='p-info-login'>dgc-software | Todos los derechos reservados </p>
                 </div>
             </div>
+            <ToastContainer autoClose={4000} hideProgressBar={true} />
         </>
     )
 }

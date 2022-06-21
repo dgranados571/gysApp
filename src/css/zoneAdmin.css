@@ -100,6 +100,16 @@
     margin: 0rem 1rem;
 }
 
+.bottom-custom:disabled {
+    width: 10rem;
+    background-color: #978b7d ;
+    color: white;
+    border: 1px solid #978b7d;
+    border-radius: 20px;
+    padding: 5px 0px;
+    margin: 0rem 1rem;
+}
+
 .bottom-custom-secundary {
     width: 10rem;
     background-color: #5C5C5C;
@@ -122,7 +132,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .div-header-equipos {
@@ -291,6 +301,10 @@ textarea.form-control {
     border: 1px solid red;
 }
 
+.alert-size-file{
+    color: red;
+}
+
 @media only screen and (min-device-width: 1400px) {}
 
 @media only screen and (min-device-width: 1200px) and (max-device-width: 1399px) {}
@@ -378,3 +392,5 @@ textarea.form-control {
 .gif-element{
     max-width: 100%;
 }
+
+

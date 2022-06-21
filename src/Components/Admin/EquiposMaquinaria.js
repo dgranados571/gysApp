@@ -1,10 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ListaEquipos } from './ListaEquipos'
 import { RegistraEquipo } from './RegistraEquipo'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const EquiposMaquinaria = () => {
 
     const [controlView, setControlView] = useState('lista')
+    const [toastInfo, setToastInfo] = useState({estado:false, mensaje:''})
+
+    useEffect(() => {
+        if(toastInfo.estado){
+            toast(toastInfo.mensaje)
+            setToastInfo({estado:false, mensaje:''})
+        }
+    }, [toastInfo])
+    
 
     const viewEquipos = () => {
         if (controlView === 'lista') {
@@ -13,7 +24,7 @@ export const EquiposMaquinaria = () => {
             )
         } else {
             return (
-                <RegistraEquipo setControlView = { setControlView } />
+                <RegistraEquipo setControlView = { setControlView } setToastInfo= {setToastInfo} />
             )
         }
     }
@@ -23,6 +34,7 @@ export const EquiposMaquinaria = () => {
             {
                 viewEquipos()
             }
+            <ToastContainer autoClose={4000} hideProgressBar={true} />
         </div>
     )
 }

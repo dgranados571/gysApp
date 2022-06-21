@@ -4,7 +4,7 @@ import axios from 'axios'
 import { utilUrl } from '../../utilUrl'
 import { Cargando } from '../Cargando'
 
-export const RegistraEquipo = ({ setControlView }) => {
+export const RegistraEquipo = ({ setControlView, setToastInfo }) => {
 
     const { urlEntorno } = utilUrl();
     const [cargando, setCargando] = useState(false)
@@ -32,6 +32,7 @@ export const RegistraEquipo = ({ setControlView }) => {
     const [lineaProduccion, setLineaProduccion] = useState('')
     const [estadoMaquina, setEstadoMaquina] = useState('')
     const [archivos, setArchivos] = useState([]);
+    const [alertaPesoArchivos, setAlertaPesoArchivos] = useState('');
 
     const nombreEquipoRef = useRef('')
     const numeroPlacaRef = useRef('')
@@ -41,6 +42,7 @@ export const RegistraEquipo = ({ setControlView }) => {
     const lineaProduccionRef = useRef('')
     const estadoMaquinaRef = useRef('')
     const archivosRef = useRef('')
+    const bottonRef = useRef('')
 
     const enviaInformacion = () => {
         validaForm();
@@ -77,10 +79,10 @@ export const RegistraEquipo = ({ setControlView }) => {
             marcaEquipoRef.current.className = 'form-control form-control-error';
         }
 
-        fechaCompraRef.current.className='form-control';
+        fechaCompraRef.current.className = 'form-control';
         if (fechaCompra.length == 0) {
             formValidado.push('fechaCompra');
-            fechaCompraRef.current.className='form-control form-control-error';
+            fechaCompraRef.current.className = 'form-control form-control-error';
         }
 
         lineaProduccionRef.current.className = 'form-control';
@@ -106,6 +108,7 @@ export const RegistraEquipo = ({ setControlView }) => {
         } else {
             formValidado.splice(0, formValidado.length)
             setControlFormValidado(false)
+            setToastInfo({ estado: true, mensaje: 'Algunos campos son obligatorios' })
         }
 
     }
@@ -134,14 +137,35 @@ export const RegistraEquipo = ({ setControlView }) => {
         }).then((response) => {
             setTimeout(() => {
                 setCargando(false)
-                console.log(response)
+                setControlView('lista');
+                setToastInfo({ estado: true, mensaje: 'Equipo registrado con exito' });
+                console.log(response);
             }, 1000)
         }).catch((error) => {
             setTimeout(() => {
-                setCargando(false)
-                console.log(error)
+                setCargando(false);
+                setToastInfo({ estado: true, mensaje: 'No fue posible registrar el equipo' });
+                console.log(error);
             }, 1000)
         })
+    }
+
+    const eventInputFiles = (e) => {
+
+        const fileList = e.target.files;
+        let valorFinalMB = 0;
+        for (let step = 0; step < fileList.length; step++) {
+            var fileSizeMB = fileList[step].size / 1024 / 1024;
+            valorFinalMB = valorFinalMB + fileSizeMB;
+        }
+        if (valorFinalMB < 20) {
+            bottonRef.current.disabled = false;
+            setAlertaPesoArchivos('');
+            setArchivos(e.target.files)
+        } else {
+            bottonRef.current.disabled = true;
+            setAlertaPesoArchivos('*Los archivos cargados superan las 20 MB');
+        }
     }
 
     const cancelaAgregaMachine = () => {
@@ -197,13 +221,14 @@ export const RegistraEquipo = ({ setControlView }) => {
                 <div className="col-12 col-sm-12 col-md-6 col-lg-6 " >
                     <div className='div-form'>
                         <p className='p-label-form'> Imagenes: </p>
-                        <input ref={archivosRef} type="file" className='form-control' multiple onChange={(e) => setArchivos(e.target.files)} />
+                        <input ref={archivosRef} type="file" className='form-control' multiple onChange={eventInputFiles} />
+                        <p className='alert-size-file'> {alertaPesoArchivos} </p>
                     </div>
                 </div>
                 <div className="col-12 col-sm-12 col-md-12 col-lg-12 " >
                     <div className='div-buttom-registra'>
                         <button className='btn btn-primary bottom-custom-secundary' onClick={cancelaAgregaMachine}>Cancelar</button>
-                        <button className='btn btn-primary bottom-custom' onClick={enviaInformacion}>Guardar</button>
+                        <button ref={bottonRef} className='btn btn-primary bottom-custom' onClick={enviaInformacion}>Guardar</button>
                     </div>
                 </div>
             </div>
