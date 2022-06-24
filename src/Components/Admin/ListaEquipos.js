@@ -32,8 +32,33 @@ export const ListaEquipos = ({ setControlView }) => {
 
     const getInformacionEquipos = async () => {
         setCargando(true);
-        await axios.get(`${urlEntorno}/service/gys/obtieneEquipos?paginaActual=${paginaActual}&elementosPorPagina=${elementosPorPagina}`)
-        .then((response) => {
+        await fetch(`${urlEntorno}/service/gys/obtieneEquipos?paginaActual=${paginaActual}&elementosPorPagina=${elementosPorPagina}`, {
+            method: 'GET'
+        }).then(resp => {
+            return resp.json()
+        }).then(data => {
+            setTimeout(() => {
+                console.log(data);
+                setElementsList(data.equipoMaquinaDTOList)
+                setElementsPaginacion({ ...elementsPaginacion, totalElementos: data.totalElementos })
+                setCargando(false);
+            }, 3000)
+        }).catch((error) => {
+            setTimeout(() => {
+                console.log(error);
+                setElementsPaginacion({ ...elementsPaginacion, totalElementos: 0 })
+                setCargando(false);
+            }, 500)
+        })
+/*
+        await axios.get(`${urlEntorno}/service/gys/obtieneEquipos?paginaActual=${paginaActual}&elementosPorPagina=${elementosPorPagina}`, {
+            headers: new Headers(
+                {
+                    'Accept': 'application/json',
+                    'Content-type': 'application/json',
+                    "Access-Control-Allow-Origin": '*'
+                })
+        }).then((response) => {
             setTimeout(() => {
                 console.log(response);
                 setElementsList(response.data.equipoMaquinaDTOList)
@@ -47,6 +72,7 @@ export const ListaEquipos = ({ setControlView }) => {
                 setCargando(false);
             }, 500)
         })
+*/
     }
 
     return (
