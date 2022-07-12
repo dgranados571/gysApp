@@ -60,6 +60,7 @@
     cursor: pointer;
     text-decoration: none;
     font-weight: 500;
+    padding: 0;
 }
 
 .a-link-redirect:hover {
@@ -102,7 +103,7 @@
 
 .bottom-custom:disabled {
     width: 10rem;
-    background-color: #978b7d ;
+    background-color: #978b7d;
     color: white;
     border: 1px solid #978b7d;
     border-radius: 20px;
@@ -172,6 +173,13 @@
     border-radius: 5px 5px 0px 0px;
 }
 
+.img-card-machine-detalle {
+    border-radius: 5px 5px 0px 0px;
+    max-width: 100%;
+    height: 100%;
+    margin: 0 5px;
+}
+
 .div-card-list-machine {
     background-color: #F6F8FA;
     margin: 1rem 2rem;
@@ -201,10 +209,9 @@
 
 .div-buttom-registra-usuario-tec {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     align-items: flex-end;
     height: 100%;
-
 }
 
 .div-pagina-link {
@@ -297,28 +304,28 @@ textarea.form-control {
     text-align: center;
 }
 
-.form-control-error{
+.form-control-error {
     border: 1px solid red;
 }
 
-.alert-size-file{
+.alert-size-file {
     color: red;
 }
 
 /*Implementación Skeleton CSS */
 
-.skeleton{
-	opacity: .8;
-	animation: skeleton-loading 1s linear infinite alternate;
+.skeleton {
+    opacity: .8;
+    animation: skeleton-loading 1s linear infinite alternate;
 }
 
 .skeleton-text {
-	display: flex;
-	justify-content: flex-end;
-	width:100%;
-	height: 1.75rem;
-	margin-bottom: 0.75rem;
-	border-radius: 5px 5px 5px 5px;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 1.75rem;
+    margin-bottom: 0.75rem;
+    border-radius: 5px 5px 5px 5px;
 }
 
 .skeleton-link-detalles-card {
@@ -332,12 +339,74 @@ textarea.form-control {
 }
 
 @keyframes skeleton-loading {
-	0% {
-		background-color: hsl(200, 20%, 70%);
-	}
-	100% {
-		background-color: hsl(200, 20%, 95%);
-	}
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
+
+.div-modal-element {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.div-modal-ver-detalles-equipos {
+    background-color: white;
+    margin: 2rem;
+    padding: 2rem;
+    border-radius: 20px;
+}
+
+.div-gift-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.div-cargando-active {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: auto;
+    display: block;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    background-color: rgba(207, 226, 255, 0.7);
+}
+
+.div-size-gift {
+    height: 5rem;
+    width: 5rem;
+}
+
+.gif-element {
+    max-width: 100%;
+}
+
+.div-btn-ver-detalles {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.img-list-detalle {
+    display: flex;
+    justify-content: space-around;
+    height: 5rem;   
+    margin-top: 1rem;
+    overflow: auto;
+}
+
+.text-aling {
+    text-align: center;
 }
 
 @media only screen and (min-device-width: 1400px) {}
@@ -396,36 +465,11 @@ textarea.form-control {
         margin: 8px 0px;
     }
 
+    .div-modal-ver-detalles-equipos {
+        background-color: white;
+        margin: 5px;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
 }
-
-.div-gift-element{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-}
-
-.div-cargando-active {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    pointer-events: auto;
-    display: block;
-    z-index: 1;
-    backdrop-filter: blur(5px);
-    background-color: rgba(207, 226, 255, 0.7);
-}
-
-.div-size-gift{
-    height: 5rem;
-    width: 5rem;
-}
-
-.gif-element{
-    max-width: 100%;
-}
-
-

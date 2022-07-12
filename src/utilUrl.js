@@ -1,7 +1,7 @@
 
 export const utilUrl = () => {
     return {
-        urlEntorno: 'http://100.26.142.47:8080'
+        urlEntorno: 'https://dgc-gys--Balancer-Classic-1012711945.us-east-1.elb.amazonaws.com'
     //    urlEntorno: 'http://localhost:8080'
     }
 
