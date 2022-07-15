@@ -173,6 +173,13 @@
     border-radius: 5px 5px 0px 0px;
 }
 
+.img-card-machine-detalle-cabecera {
+    border-radius: 5px 5px 0px 0px;
+    max-width: 40%;
+    height: 100%;
+    margin: 0 5px;
+}
+
 .img-card-machine-detalle {
     border-radius: 5px 5px 0px 0px;
     max-width: 100%;

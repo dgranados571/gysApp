@@ -14,6 +14,8 @@ export const ListaEquipos = ({ setControlView }) => {
     const [cargando, setCargando] = useState(false)
     const [verDetalle, setVerDetalle] = useState(false)
 
+    const [objectDetalle, setObjectDetalle] = useState({})
+
     const [elementsPaginacion, setElementsPaginacion] = useState(
         { totalElementos: '0', elementosPorPagina: '4', paginaActual: '1' }
     );
@@ -34,13 +36,14 @@ export const ListaEquipos = ({ setControlView }) => {
 
     const getInformacionEquipos = async () => {
         setCargando(true);
-        
+
         await fetch(`${urlEntorno}/service/gys/obtieneEquipos?paginaActual=${paginaActual}&elementosPorPagina=${elementosPorPagina}`, {
             method: 'GET'
         }).then(resp => {
             return resp.json()
         }).then(data => {
             setTimeout(() => {
+                console.log('Data', data);
                 setElementsList(data.equipoMaquinaDTOList)
                 setElementsPaginacion({ ...elementsPaginacion, totalElementos: data.totalElementos })
                 setCargando(false);
@@ -52,32 +55,38 @@ export const ListaEquipos = ({ setControlView }) => {
                 setCargando(false);
             }, 500)
         })
-/*
-        await axios.get(`${urlEntorno}/service/gys/obtieneEquipos?paginaActual=${paginaActual}&elementosPorPagina=${elementosPorPagina}`, {
-            headers: new Headers(
-                {
-                    'Accept': 'application/json',
-                    'Content-type': 'application/json',
-                    "Access-Control-Allow-Origin": '*'
+        /*
+                await axios.get(`${urlEntorno}/service/gys/obtieneEquipos?paginaActual=${paginaActual}&elementosPorPagina=${elementosPorPagina}`, {
+                    headers: new Headers(
+                        {
+                            'Accept': 'application/json',
+                            'Content-type': 'application/json',
+                            "Access-Control-Allow-Origin": '*'
+                        })
+                }).then((response) => {
+                    setTimeout(() => {
+                        console.log(response);
+                        setElementsList(response.data.equipoMaquinaDTOList)
+                        setElementsPaginacion({ ...elementsPaginacion, totalElementos: response.data.totalElementos })
+                        setCargando(false);
+                    }, 500)
+                }).catch((error) => {
+                    setTimeout(() => {
+                        console.log(error);
+                        setElementsPaginacion({ ...elementsPaginacion, totalElementos: 0 })
+                        setCargando(false);
+                    }, 500)
                 })
-        }).then((response) => {
-            setTimeout(() => {
-                console.log(response);
-                setElementsList(response.data.equipoMaquinaDTOList)
-                setElementsPaginacion({ ...elementsPaginacion, totalElementos: response.data.totalElementos })
-                setCargando(false);
-            }, 500)
-        }).catch((error) => {
-            setTimeout(() => {
-                console.log(error);
-                setElementsPaginacion({ ...elementsPaginacion, totalElementos: 0 })
-                setCargando(false);
-            }, 500)
-        })
-*/
+        */
     }
 
-    const actionVerDetalle = ()=>{
+    const actionVerDetalle = (e) => {
+
+        elementsList.forEach((element)=>{
+            if(element.id_procesamiento === e.target.id){
+                setObjectDetalle(element);               
+            }
+        })
         setVerDetalle(true)
     }
 
@@ -98,7 +107,7 @@ export const ListaEquipos = ({ setControlView }) => {
                                     <div className="col-12 col-sm-6 col-md-4 col-lg-3 " >
                                         <div className='div-card-list-machine'>
                                             <div className='div-image-card'>
-                                                <img className='img-card-machine' src={element.urlImagenInicial ? element.urlImagenInicial : imagen1} alt=''></img>
+                                                <img className='img-card-machine' src={element.url_imagen_inicial ? element.url_imagen_inicial : imagen1} alt=''></img>
                                             </div>
                                             <div className='div-info-card'>
                                                 <div className='div-info-card-element'>
@@ -111,7 +120,7 @@ export const ListaEquipos = ({ setControlView }) => {
                                                 </div>
                                             </div>
                                             <div className='link-ver-detalles-card'>
-                                                <button onClick={actionVerDetalle} className='btn btn-link a-link-redirect'>Ver detalles</button>
+                                                <button onClick={actionVerDetalle} id={element.id_procesamiento} className='btn btn-link a-link-redirect'>Ver detalles</button>
                                             </div>
                                         </div>
                                     </div>
@@ -163,11 +172,11 @@ export const ListaEquipos = ({ setControlView }) => {
                 <Paginacion elementsPaginacion={elementsPaginacion} setElementsPaginacion={setElementsPaginacion} />
             </div>
             <div className='div-style-form'>
-            {verDetalle ?
-                <EquipoDetalles setVerDetalle= {setVerDetalle}/>
-                :
-                <></>
-            }
+                {verDetalle ?
+                    <EquipoDetalles setVerDetalle={setVerDetalle} objectDetalle={objectDetalle} />
+                    :
+                    <></>
+                }
             </div>
         </>
     )

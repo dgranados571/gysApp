@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import imagen1 from '../../img/mantenimiento.jpg'
 
 
-export const EquipoDetalles = ({ setVerDetalle }) => {
+export const EquipoDetalles = ({ setVerDetalle, objectDetalle }) => {
 
-    const cancelaVerDetalles = () => {
+    const [imagenCabecera, setImagenCabecera] = useState(objectDetalle.urls_imagenes[0])
+
+    const actionImagenSelected = (e)=>{
+        setImagenCabecera(e.target.currentSrc)
+    }
+
+    const cancelaVerDetalles = (e) => {
         setVerDetalle(false)
     }
 
@@ -15,19 +21,19 @@ export const EquipoDetalles = ({ setVerDetalle }) => {
                 <div className="row">
                     <div className="col-12 col-sm-12 col-md-6 col-lg-6 " >
                         <div className='text-aling'>
-                            <img className='img-card-machine-detalle' src={imagen1} alt=''></img>
+                            <img className='img-card-machine-detalle-cabecera' src={imagenCabecera} alt=''></img>
                         </div>
                         <div className='img-list-detalle'>
-                            <img className='img-card-machine-detalle' src={imagen1} alt=''></img>
-                            <img className='img-card-machine-detalle' src={imagen1} alt=''></img>
-                            <img className='img-card-machine-detalle' src={imagen1} alt=''></img>
-                            <img className='img-card-machine-detalle' src={imagen1} alt=''></img>
-                            <img className='img-card-machine-detalle' src={imagen1} alt=''></img>
-                            <img className='img-card-machine-detalle' src={imagen1} alt=''></img>
-                            <img className='img-card-machine-detalle' src={imagen1} alt=''></img>
-                            <img className='img-card-machine-detalle' src={imagen1} alt=''></img>
+                            {
+                                objectDetalle.urls_imagenes.map((imageUrl)=>{
+                                    return (
+                                        <button onClick={actionImagenSelected} className='btn btn-link'>
+                                            <img className='img-card-machine-detalle' src={imageUrl} alt=''></img>
+                                        </button>
+                                    )
+                                })
+                            }
                         </div>
-
                     </div>
                     <div className="col-12 col-sm-12 col-md-6 col-lg-6 " ></div>
                     <div className="col-12 col-sm-12 col-md-12 col-lg-12 " >
@@ -35,8 +41,6 @@ export const EquipoDetalles = ({ setVerDetalle }) => {
                             <button className='btn btn-primary bottom-custom-secundary' onClick={cancelaVerDetalles}>Cancelar</button>
                             <button className='btn btn-primary bottom-custom' >Editar</button>
                         </div>
-
-
                     </div>
                 </div>
             </div>
